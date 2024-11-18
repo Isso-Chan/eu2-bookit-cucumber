@@ -40,7 +40,7 @@ public class Driver {
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));
+                    driverPool.set(new ChromeDriver(new ChromeOptions().addArguments("--headless")));
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
@@ -48,7 +48,7 @@ public class Driver {
                     break;
                 case "firefox-headless":
                     WebDriverManager.firefoxdriver().setup();
-                    driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true)));
+                    driverPool.set(new FirefoxDriver(new FirefoxOptions().addArguments("--headless")));
                     break;
                 case "ie":
                     if (!System.getProperty("os.name").toLowerCase().contains("windows"))
